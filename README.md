@@ -1,4 +1,4 @@
-# Artifact: microarchitectural characterization of NVIDIA Vera for HPC
+# Artifact: NVIDIA Vera: A Microarchitecture-Level Comparison with Grace, Turin, and Granite Rapids
 
 This archive holds the benchmark scripts, raw results, parsers and figure
 scripts behind the paper's Table I and Figures 2-11. Every figure can be
@@ -91,6 +91,6 @@ python3 gnuplot/build.py               # data/ -> gnuplot/out/<figure>.tex + .pd
 
 ## Licence
 
-TODO(licence): scripts and code under BSD-3-Clause; results and figures
+Scripts and code fall under BSD-3-Clause; results and figures
 under CC-BY-4.0 (proposed). Third-party code keeps its own licence:
-`benchmarks/test-tlb/src/test-tlb.c` (see `src/README.upstream`).
+`benchmarks/test-tlb/src/test-tlb.c`.
