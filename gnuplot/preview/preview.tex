@@ -1,0 +1,15 @@
+% Layout check: every figure at its real size inside an IEEEtran conference
+% page, next to 10pt body text. Build with build.py --preview (or pdflatex).
+\documentclass[conference]{IEEEtran}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\graphicspath{{../out/}}
+\newcommand{\fig}[2]{\IfFileExists{../out/#1.tex}{\input{../out/#1.tex}}{\fbox{\parbox{0.9\linewidth}{\centering missing: #1}}}}
+\newcommand{\filler}{Body text at the paper's 10pt size, for comparison with the
+figure labels. The quick brown fox jumps over the lazy dog 0123456789. }
+\begin{document}
+\title{Figure layout preview}
+\maketitle
+\input{figlist}
+\end{document}

@@ -1,0 +1,8 @@
+Using built-in specs.
+COLLECT_GCC=gcc
+COLLECT_LTO_WRAPPER=/opt/gcc-15.3.0/libexec/gcc/aarch64-unknown-linux-gnu/15.3.0/lto-wrapper
+Target: aarch64-unknown-linux-gnu
+Configured with: /usr/src/gcc-15.3.0/configure --prefix=/opt/gcc-15.3.0 --enable-languages=c,c++,fortran --disable-multilib --with-cpu=olympus --with-arch=armv9.2-a --with-as=/opt/gcc-15.3.0/bin/as --with-ld=/opt/gcc-15.3.0/bin/ld --enable-threads=posix --enable-shared --enable-linker-build-id --enable-plugin --enable-default-pie --enable-default-ssp --with-system-zlib --enable-lto --enable-checking=release LDFLAGS='-Wl,-rpath,/opt/gcc-15.3.0/lib -Wl,-rpath,/opt/gcc-15.3.0/lib64'
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 15.3.0 (GCC) 

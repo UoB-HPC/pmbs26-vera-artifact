@@ -1,0 +1,11 @@
+ARR_SIZE=202000000
+CC = gcc
+CFLAGS = -O3 -fopenmp -mcmodel=large -fno-pie -DSTREAM_ARRAY_SIZE=$(ARR_SIZE) -DNTIMES=100 -ffreestanding -march=native
+
+all: stream_c.exe
+
+stream_c.exe: stream.c
+	$(CC) $(CFLAGS) -no-pie stream.c -o stream_c.exe
+
+clean:
+	rm -f stream_c.exe *.o

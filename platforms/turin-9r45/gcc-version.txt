@@ -1,0 +1,8 @@
+Using built-in specs.
+COLLECT_GCC=gcc
+COLLECT_LTO_WRAPPER=/usr/local/gcc-15.3/libexec/gcc/x86_64-pc-linux-gnu/15.3.0/lto-wrapper
+Target: x86_64-pc-linux-gnu
+Configured with: ../configure --prefix=/usr/local/gcc-15.3 --enable-languages=c,c++,fortran --disable-multilib --disable-bootstrap --disable-nls
+Thread model: posix
+Supported LTO compression algorithms: zlib
+gcc version 15.3.0 (GCC) 

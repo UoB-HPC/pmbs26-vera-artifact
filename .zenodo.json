@@ -1,0 +1,14 @@
+{
+  "title": "Artifact: microarchitectural characterization of NVIDIA Vera for HPC (benchmark scripts, raw results and figure scripts)",
+  "upload_type": "software",
+  "description": "Benchmark scripts, raw results, parsers and gnuplot figure scripts behind Table I and Figures 2-11 of the paper. Platforms: NVIDIA Grace, NVIDIA Vera (pre-release engineering sample), AMD EPYC 9R45, Intel Xeon 6975P-C. Benchmarks: STREAM, test-tlb, core-to-core latency, NAS Parallel Benchmarks, CloverLeaf, TeaLeaf, Neutral, miniBUDE, perf counters and six full applications.",
+  "creators": [
+    {"name": "Moore, Joseph", "affiliation": "University of Bristol"},
+    {"name": "TODO(co-authors)", "affiliation": "TODO"}
+  ],
+  "license": "TODO(licence): e.g. BSD-3-Clause",
+  "keywords": ["HPC", "benchmarking", "CPU", "microarchitecture", "NVIDIA Vera", "NVIDIA Grace", "AMD EPYC", "Intel Xeon"],
+  "related_identifiers": [
+    {"identifier": "TODO(paper DOI)", "relation": "isSupplementTo", "scheme": "doi"}
+  ]
+}

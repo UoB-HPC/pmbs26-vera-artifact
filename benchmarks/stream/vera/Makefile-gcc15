@@ -1,0 +1,11 @@
+ARR_SIZE=183000000
+CC = gcc
+CFLAGS = -O3 -fopenmp -mcmodel=large -mno-outline-atomics -fno-pie -DSTREAM_ARRAY_SIZE=$(ARR_SIZE) -DNTIMES=100 -ffreestanding -mcpu=olympus
+
+all: stream_c.exe
+
+stream_c.exe: stream.c
+	$(CC) $(CFLAGS) -no-pie stream.c -o stream_c.exe
+
+clean:
+	rm -f stream_c.exe *.o

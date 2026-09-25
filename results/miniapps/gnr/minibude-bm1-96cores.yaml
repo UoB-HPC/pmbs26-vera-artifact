@@ -1,0 +1,49 @@
+miniBUDE:  
+compile_commands:
+   - "/usr/bin/c++ -DOMP -DUSE_PPWI=1,2,4,8,16,32,64,128,256,512,1024,2048 -I<SRC>/omp -I$HOME/joseph/miniBUDE/build/generated  -DNDEBUG -std=c++17 -O3 -ffast-math -march=native -fopenmp -o <OUT>/src/main.cpp.o -c <SRC>/main.cpp"
+vcs:
+  commit:  570f66c1fd0c29b7f3ab6fa96fba87f4561aa44c
+  author:  "Tom Lin (tom91136@gmail.com)"
+  date:    "2024-10-15 17:53:57 +0100"
+  subject: "Merge pull request #40 from colleeneb/cuda_best_flops"
+host_cpu:
+  ~
+time: { epoch_s:1786037318, formatted: "Thu Aug  6 17:28:38 2026 GMT" }
+deck:
+  path:         "$HOME/joseph/miniBUDE/data/bm1"
+  poses:        65536
+  proteins:     938
+  ligands:      26
+  forcefields:  34
+config:
+  iterations:   100
+  poses:        65536
+  ppwi:
+    available:  [1,2,4,8,16,32,64,128,256,512,1024,2048]
+    selected:   [32]
+  wgsize:       [1]
+device: { index: 0,  name: "OMP CPU" }
+# (ppwi=32,wgsize=1,valid=1)
+results:
+  - outcome:             { valid: true, max_diff_%: 0.003 }
+    param:               { ppwi: 32, wgsize: 1 }
+    raw_iterations:      [18.6968,17.9812,18.0045,17.9729,17.9612,18.1404,18.028,17.959,18.0006,18.0095,17.9952,17.9644,17.9421,17.9532,17.9439,17.9459,17.9744,17.9746,17.9498,17.9561,17.9439,18.1595,18.1595,18.095,18.3526,18.0922,18.1017,18.1433,18.1241,18.1336,18.1866,18.1276,18.1924,18.1018,18.1221,18.2065,18.1089,18.1773,18.106,18.1859,18.108,18.1359,18.1323,18.1287,18.2287,18.1282,18.1589,18.1078,18.1267,18.1492,18.1624,18.2214,18.2332,18.1584,18.2584,19.241,18.2325,18.057,18.1831,18.109,18.0962,18.1654,18.1111,18.1115,18.2214,18.1214,18.1589,18.156,18.1369,18.1558,18.1011,18.2716,18.1437,18.1791,18.0604,18.1563,18.1645,18.1213,18.1482,18.2143,18.3342,18.0395,18.1639,18.0958,18.1583,18.1703,18.2043,18.0983,18.1034,18.1752,18.1182,18.2034,18.0659,18.2317,18.1095,18.128,18.1339,18.2325,18.1383,18.1526,18.1585,18.1415]
+    context_ms:          2.037498
+    sum_ms:              1813.109
+    avg_ms:              18.131
+    min_ms:              17.942
+    max_ms:              19.241
+    stddev_ms:           0.141
+    giga_interactions/s: 88.152
+    gflop/s:             2673.906
+    gfinst/s:            2203.800
+    energies:            
+      - 865.52
+      - 25.07
+      - 368.43
+      - 14.67
+      - 574.99
+      - 707.35
+      - 33.95
+      - 135.59
+best: { min_ms: 17.94, max_ms: 19.24, sum_ms: 1813.11, avg_ms: 18.13, ppwi: 32, wgsize: 1 }

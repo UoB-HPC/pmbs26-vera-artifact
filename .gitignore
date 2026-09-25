@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+gnuplot/dat/
+gnuplot/out/
+gnuplot/preview/*.pdf
+gnuplot/preview/*.aux
+gnuplot/preview/*.log

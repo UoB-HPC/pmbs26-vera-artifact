@@ -1,0 +1,45 @@
+# Full-application results behind Fig. 11 (one batch of runs).
+# One row per (app, case, arch, threads_per_core); `value` is in `unit`.
+#   unit s or avg_ts -> time (lower is better); ns/day -> rate (higher is better)
+#   threads_per_core 1 = SMT off, 2 = SMT on (one MPI rank per core; see applications/)
+# Arch ids: grace, vera, turin-9r45 (EPYC 9R45), gnr (Xeon 6975P-C).
+# WRF: avg_ts = mean 'Timing for main' per step (s) from rsl.out.0000, first
+#   (initialization) step excluded; history writes are not included.
+# CP2K: s = force-evaluation time, fist_calc_energy_force TOTAL TIME (max over
+#   ranks), which excludes the rank-0 trajectory and restart output.
+# OpenFOAM has no SMT-on runs (pure MPI).
+app,case,unit,arch,threads_per_core,value
+CASTEP,al3x3,s,grace,1,304.23
+CASTEP,al3x3,s,vera,1,242.91
+CASTEP,al3x3,s,vera,2,212.91
+CASTEP,al3x3,s,gnr,1,129.77
+CASTEP,al3x3,s,gnr,2,138.44
+CASTEP,al3x3,s,turin-9r45,1,186.78
+CP2K,fayalite,s,grace,1,19.694
+CP2K,fayalite,s,vera,1,12.785
+CP2K,fayalite,s,vera,2,11.746
+CP2K,fayalite,s,gnr,1,15.421
+CP2K,fayalite,s,gnr,2,14.872
+CP2K,fayalite,s,turin-9r45,1,19.171
+GROMACS,TestCaseB,ns/day,grace,1,3.015
+GROMACS,TestCaseB,ns/day,vera,1,5.802
+GROMACS,TestCaseB,ns/day,vera,2,6.696
+GROMACS,TestCaseB,ns/day,gnr,1,10.61
+GROMACS,TestCaseB,ns/day,gnr,2,11.054
+GROMACS,TestCaseB,ns/day,turin-9r45,1,9.63
+NAMD,stmv,ns/day,grace,1,1.69095
+NAMD,stmv,ns/day,vera,1,2.8999
+NAMD,stmv,ns/day,vera,2,3.1826
+NAMD,stmv,ns/day,gnr,1,2.24782
+NAMD,stmv,ns/day,gnr,2,2.38492
+NAMD,stmv,ns/day,turin-9r45,1,1.86637
+OpenFOAM,hpc_motorbike,s,grace,1,352.42
+OpenFOAM,hpc_motorbike,s,vera,1,160.07
+OpenFOAM,hpc_motorbike,s,gnr,1,345.46
+OpenFOAM,hpc_motorbike,s,turin-9r45,1,379.8
+WRF,corus12k,avg_ts,grace,1,0.5838
+WRF,corus12k,avg_ts,vera,1,0.3062
+WRF,corus12k,avg_ts,vera,2,0.2826
+WRF,corus12k,avg_ts,gnr,1,0.399
+WRF,corus12k,avg_ts,gnr,2,0.3692
+WRF,corus12k,avg_ts,turin-9r45,1,0.448

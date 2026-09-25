@@ -1,0 +1,5 @@
+arch,variant,threads,cores,best_triad_gbps,best_cores,gbps_per_core,full_chip_triad_gbps,source
+grace,smt-off,72,72,475.41,37,6.603,449.44,scaling-sequential @ 37 cores
+vera,smt-off,88,88,1102.68,53,12.53,1088.22,scaling-round-robin @ 53 cores
+turin-9r45,smt-off,96,96,335.87,36,3.499,332.1,scaling-round-robin @ 36 cores
+gnr,smt-off,96,96,553.64,96,5.767,552.58,scaling-sequential @ 96 cores

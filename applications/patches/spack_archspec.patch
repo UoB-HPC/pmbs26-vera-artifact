@@ -1,0 +1,145 @@
+--- a/lib/spack/spack/vendor/archspec/json/cpu/microarchitectures.json
++++ b/lib/spack/spack/vendor/archspec/json/cpu/microarchitectures.json
+@@ -3556,6 +3556,142 @@
+       },
+       "cpupart": "0xd49"
+     },
++    "olympus": {
++      "from": [
++        "neoverse_v2",
++        "armv9.0a"
++      ],
++      "vendor": "Nvidia",
++      "features": [
++        "fp",
++        "asimd",
++        "evtstrm",
++        "aes",
++        "pmull",
++        "sha1",
++        "sha2",
++        "crc32",
++        "atomics",
++        "fphp",
++        "asimdhp",
++        "cpuid",
++        "asimdrdm",
++        "jscvt",
++        "fcma",
++        "lrcpc",
++        "dcpop",
++        "sha3",
++        "asimddp",
++        "sha512",
++        "sve",
++        "asimdfhm",
++        "uscat",
++        "ilrcpc",
++        "flagm",
++        "sb",
++        "dcpodp",
++        "sve2",
++        "flagm2",
++        "frint",
++        "svei8mm",
++        "svebf16",
++        "i8mm",
++        "bf16",
++       "dgh",
++        "rng",
++       "bti",
++       "ecv",
++       "afp",
++       "wfxt",
++       "fpmr",
++       "lut",
++       "faminmax",
++       "f8cvt",
++       "f8fma",
++       "f8dp4",
++       "f8dp2",
++       "f8e4m3",
++       "f8e5m2",
++       "ls64"
++      ],
++      "compilers": {
++        "gcc": [
++          {
++            "versions": "4.8:5.99",
++            "flags": "-march=armv8-a"
++          },
++          {
++            "versions": "6:6.99",
++            "flags": "-march=armv8.1-a"
++          },
++          {
++            "versions": "7.0:7.99",
++            "flags": "-march=armv8.2-a -mtune=cortex-a72"
++          },
++          {
++            "versions": "8.0:8.99",
++            "flags": "-march=armv8.4-a+sve -mtune=cortex-a72"
++          },
++          {
++            "versions": "9.0:9.99",
++            "flags": "-march=armv8.5-a+sve -mtune=cortex-a76"
++          },
++          {
++            "versions": "10.0:11.3.99",
++            "flags": "-march=armv8.5-a+sve+sve2+i8mm+bf16 -mtune=cortex-a77"
++          },
++          {
++            "versions": "11.4:11.99",
++            "flags": "-mcpu=neoverse-v2"
++          },
++          {
++            "versions": "12.0:12.2.99",
++            "flags": "-march=armv9-a+i8mm+bf16 -mtune=cortex-a710"
++          },
++          {
++            "versions": "12.3:14.99",
++            "flags": "-mcpu=neoverse-v2"
++          },
++         {
++            "versions": "15.0:",
++            "flags": "-mcpu=olympus"
++         }
++        ],
++        "clang": [
++          {
++            "versions": "9.0:10.99",
++            "flags": "-march=armv8.5-a+sve"
++          },
++          {
++            "versions": "11.0:13.99",
++            "flags": "-march=armv8.5-a+sve+sve2+i8mm+bf16"
++          },
++          {
++            "versions": "14.0:15.99",
++            "flags": "-march=armv9-a+i8mm+bf16"
++          },
++          {
++            "versions": "16.0:",
++            "flags": "-mcpu=neoverse-v2"
++          }
++        ],
++        "arm": [
++          {
++            "versions": "23.04.0:",
++            "flags": "-mcpu=neoverse-v2"
++          }
++        ],
++        "nvhpc": [
++          {
++            "versions": "23.3:",
++            "name": "neoverse-v2",
++            "flags": "-tp {name}"
++          }
++        ]
++      },
++      "cpupart": "0x010"
++    },
++
+     "m1": {
+       "from": [
+         "armv8.4a"
