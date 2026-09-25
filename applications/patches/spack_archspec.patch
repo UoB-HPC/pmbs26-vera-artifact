@@ -1,6 +1,14 @@
 --- a/lib/spack/spack/vendor/archspec/json/cpu/microarchitectures.json
 +++ b/lib/spack/spack/vendor/archspec/json/cpu/microarchitectures.json
-@@ -3556,6 +3556,142 @@
+@@ -2431,7 +2431,6 @@
+         "fma",
+         "fsgsbase",
+         "gfni",
+-        "ibrs_enhanced",
+         "mmx",
+         "movbe",
+         "movdir64b",
+@@ -3556,6 +3555,142 @@
        },
        "cpupart": "0xd49"
      },
