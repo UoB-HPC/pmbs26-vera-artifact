@@ -38,6 +38,7 @@ The exact download commands and case edits are in the `prerun_cmds` of each
 ```bash
 git clone --depth=2 --branch=releases/v1.1 https://github.com/spack/spack.git
 (cd spack && patch -p1 < <artifact>/applications/patches/spack_archspec.patch)
+(cd spack && patch -p1 < <artifact>/applications/patches/spack_zen5.patch)
 . spack/share/spack/setup-env.sh
 
 mkdir -p $MYCONFDIR && cd $MYCONFDIR        # MYCONFDIR is set in the system config file
