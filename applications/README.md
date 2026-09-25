@@ -7,7 +7,7 @@ them into `data/applications/apps.csv`.
 
 | app | Spack spec | case | input | figure of merit |
 |---|---|---|---|---|
-| CASTEP | `castep@25.1.1` | al3x3 | `~/sources/al3x3.tgz` (TODO(apps-inputs): source) | run time (s) |
+| CASTEP | `castep@25.1.1` | al3x3 | `al3x3.tgz` | run time (s) |
 | CP2K | `cp2k@2024.3+mpi` | fayalite (`Fayalite-FIST`) | `benchmarks/Fayalite-FIST/fayalite.inp` from the CP2K GitHub repo | run time (s) |
 | GROMACS | `gromacs@2025.3` (`~sve` on Vera) | TestCaseB | PRACE UEABS 2.2 `GROMACS_TestCaseB.tar.xz`; `-nsteps 50000` | ns/day |
 | NAMD | `namd@3.0.1 ^charmpp backend=multicore` | stmv | `stmv.tar.gz` from ks.uiuc.edu | ns/day |
@@ -83,6 +83,3 @@ wall time was taken from the job output where the test does not report it.
 - OpenFOAM: pure MPI, no SMT runs; `numberOfSubdomains` = number of ranks.
 - WRF: SMT runs also set `OMP_STACKSIZE=64M`.
 - Grace configs run SMT-off only (Grace has one thread per core).
-
-TODO(applications): `spack.lock` per platform (exact package versions), the
-Turin-specific fixes, repetitions, and checksums of the input files.

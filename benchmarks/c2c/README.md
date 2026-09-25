@@ -5,17 +5,15 @@ written in Rust. It pins two threads to two cores and makes them take turns
 writing one shared cache line. The time per hand-over is the latency between
 those two cores. It repeats this for every pair of cores.
 
-No wrapper script was used; the tool was built and run by hand. Typical
-usage (replace with the exact command, see TODO below):
+No wrapper script was used; the tool was built and run by hand:
 
 ```bash
 git clone https://github.com/nviennot/core-to-core-latency
 cd core-to-core-latency && cargo build --release
-./target/release/core-to-core-latency <iterations> --csv > core-to-core-latency.csv
+./target/release/core-to-core-latency 1000 --csv > core-to-core-latency.csv
 ```
 
-TODO(c2c): tool commit, `rustc --version`, and the exact command line
-(iterations, samples, core list) for each platform.
+The number of samples per iteration was set to 300 within the source code.
 
 ## Output
 

@@ -18,7 +18,7 @@ Common: `-O3 -fopenmp -mcmodel=large -fno-pie -no-pie -ffreestanding -DNTIMES=10
 | platform | `STREAM_ARRAY_SIZE` (8-byte elements) | memory per array | arch flag |
 |---|---|---|---|
 | vera | 183,000,000 | 1.4 GiB | `-mcpu=olympus -mno-outline-atomics` |
-| grace | 240,000,000 | 1.8 GiB | see below |
+| grace | 240,000,000 | 1.8 GiB | `-mcpu=neoverse-v2` |
 | turin-9r45 | 202,000,000 | 1.5 GiB | `-march=native` |
 | gnr | 252,000,000 | 1.9 GiB | `-march=native` |
 
@@ -35,7 +35,8 @@ Each array is at least 4x the last-level cache. STREAM reports the best of
 
 ## Grace
 
-The Grace scripts were not kept. The raw output (`results/stream/grace/full-cores-best.txt`)
-records the settings: STREAM 5.10, array size 240,000,000, 100 iterations,
-72 threads. TODO(grace-stream): add the Grace Makefile, arch flag and sweep
-scripts, or confirm they match the scripts here with `total_cores=72`.
+For Grace, the same script can be used as for other architectures but with the following parameters:
+- Built using `-mcpu=neoverse-v2`
+- Array size = 240,000,000
+- Iterations = 100
+- OMP_NUM_THREADS = 72

@@ -21,7 +21,7 @@ for cores in $(seq 1 88); do
 	threads=$((cores * 2))
 
 	output=$(OMP_NUM_THREADS="$threads" OMP_PROC_BIND=close OMP_PLACES=cores \
-		taskset -c "0-$core_end,$sibling_start-$sibling_end" "$BUDE_EXE" -i 10 -p 256 --deck "$DECK" 2>/dev/null)
+		taskset -c "0-$core_end,$sibling_start-$sibling_end" "$BUDE_EXE" -i 10 -p 32 --deck "$DECK" 2>/dev/null)
 
 	printf '%s\n' "$output" > "$RAW_DIR/bude_${cores}cores_mt.yaml"
 

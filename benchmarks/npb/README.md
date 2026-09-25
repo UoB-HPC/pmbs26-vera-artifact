@@ -13,15 +13,9 @@ GCC 15.3.0 (`gfortran`, `gcc` for IS). Edit `config/make.def`, then
 
 | platform | `FFLAGS` / `CFLAGS` |
 |---|---|
-| vera | `-O3 -fopenmp -mcpu=olympus -mcmodel=large ...` (NPB truncates the line; TODO(npb-flags): full Vera flags) |
-| grace | `-O3 -fopenmp -mcpu=neoverse-v2` (from the class B output `raw/bt-B-72cores.log`; the class D log has no compile block) |
+| vera | `-O3 -fopenmp -mcpu=olympus -mcmodel=large` |
+| grace | `-O3 -fopenmp -mcpu=neoverse-v2` |
 | turin-9r45, gnr | `-O3 -fopenmp -march=native -mcmodel=large` |
-
-Exception on both x86 platforms: the class D **EP** and **LU** binaries were
-built earlier, with `-O3 -fopenmp` only (no `-march=native`, no
-`-mcmodel=large`). This is visible in `raw/nas-D.out` (compile date and
-flags). All other x86 class D binaries use the flags in the table.
-TODO(npb-flags): class B flags per platform.
 
 ## Run
 

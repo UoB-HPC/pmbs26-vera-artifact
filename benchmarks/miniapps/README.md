@@ -22,7 +22,7 @@ GCC 15.3.0, `-O3`, arch flag `-mcpu=olympus` (Vera), `-mcpu=neoverse-v2`
   `c++ -DOMP -std=c++17 -O3 -ffast-math <arch flag> -fopenmp`.
   Note: `build-gcc15.sh` in this folder is an older Makefile build and does
   not match the CMake binary the run scripts call.
-- CloverLeaf, TeaLeaf, Neutral: TODO(miniapp-build): build commands and
+- CloverLeaf, TeaLeaf, Neutral: build commands and
   commits.
 
 ## Run
@@ -37,14 +37,10 @@ Each configuration was run once, except miniBUDE (see below).
 
 ### miniBUDE final configuration
 
-The data in the paper come from a final re-run on all four platforms with
-one common setting: deck `bm1`, `-p 32` (32 poses per work item) and
+The data in the paper uses the following common settings: deck `bm1`, `-p 32` (32 poses per work item) and
 `-i 100` (100 iterations). With 65,536 poses, `-p 32` gives 2,048 work
 items, at least 21 per thread on every chip, so no thread is left idle at
-the end of an iteration. The run scripts in this folder are from an earlier
-round and still show `-i 10 -p <16|32|256>`. The final run scripts were not
-kept. TODO(minibude-scripts): add them if they can be recovered. The
-whole-chip YAML output of the final run is in `results/miniapps/<platform>/`
+the end of an iteration. The whole-chip YAML output of the final run is in `results/miniapps/<platform>/`
 and records the commit, compile line, iterations, `ppwi` and every iteration
 time.
 

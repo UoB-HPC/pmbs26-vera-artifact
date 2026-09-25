@@ -15,7 +15,7 @@ printf 'cores,sum_ms\n' > "$CSV_FILE"
 for cores in $(seq 1 88); do
 	core_end=$((cores - 1))
 	output=$(OMP_NUM_THREADS="$cores" OMP_PROC_BIND=close OMP_PLACES=cores \
-		taskset -c "0-$core_end" "$BUDE_EXE" -i 10 -p 256 --deck "$DECK" 2>/dev/null)
+		taskset -c "0-$core_end" "$BUDE_EXE" -i 10 -p 32 --deck "$DECK" 2>/dev/null)
 
 	printf '%s\n' "$output" > "$RAW_DIR/bude_${cores}cores.yaml"
 

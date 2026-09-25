@@ -13,7 +13,6 @@ cd src && make        # gcc -g -Wall -O test-tlb.c -o test-tlb -lm
 `PAGE_SIZE` at the top of `test-tlb.c` must match the base page size of the
 system. The copy here is set to `16*4096` (64 KiB), the base page size of the
 Vera and Grace kernels. The x86 systems use 4 KiB pages (`4096`).
-TODO(tlb-pagesize): confirm the x86 builds used `4096`.
 
 ## Run
 
